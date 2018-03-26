@@ -115,7 +115,7 @@ for i = 1:model.nHidden
         deltaTranslation = (error*model.OutputWeight(i,:))'*F*(-1./model.dilation(i,j));
         model.translation(i,j) = model.translation(i,j) + model.lr.*(1/N).*deltaTranslation;
         
-        deltaDilation = (error*model.OutputWeight(i,:).*F)'*(X-model.translation(i,j))./model.dilation(i,j)*(-1./model.dilation(i,j));
+        deltaDilation = (error*model.OutputWeight(i,:).*F)'*(X-model.translation(i,j)).*(-1./(model.dilation(i,j).^2));
         model.dilation(i,j) = model.dilation(i,j) + model.lr.*(1/N).*deltaDilation;
     end
 end
