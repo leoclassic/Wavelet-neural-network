@@ -102,8 +102,8 @@ if model.direct
 end
 
 for i = 1:model.nHidden
-    F = ones(size(X,1),1);
     for j = 1:model.nInput
+        F = ones(size(X,1),1);
         for k = 1:model.nInput
             z = (X(:,k)-model.translation(i,k))./model.dilation(i,k);
             if j~=k
