@@ -30,8 +30,8 @@ model.nInput = nInput;
 model.nOutput = nOutput;
 model.nHidden = nHidden;
 model.direct = direct;
-model.translation = rand(nHidden,nInput);
-model.dilation = randn(nHidden,nInput);
+model.translation = randn(nHidden,nInput);
+model.dilation = rand(nHidden,nInput);
 if direct
     model.DirectWeight = randn(nInput,nOutput);
 end
