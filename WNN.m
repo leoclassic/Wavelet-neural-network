@@ -17,7 +17,7 @@ figure
 subplot(2,1,1)
 plot(X,T,'b',X,Y,'r')
 subplot(2,1,2)
-plot(convergence)
+semilogy(convergence)
 
 mse(Y-T)
 end
@@ -49,7 +49,10 @@ for iter = 1:model.nIter
     convergence(iter) = E'*E;
     model = backward(model,X,Hidden,E);
     
+    subplot(2,1,1)
     plot(X,T,'b',X,Y,'r')
+    subplot(2,1,2)
+    plot(semilogy(convergence(1:iter)))
     drawnow
 end
 close all
