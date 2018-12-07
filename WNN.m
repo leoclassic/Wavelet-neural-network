@@ -52,7 +52,7 @@ for iter = 1:model.nIter
     subplot(2,1,1)
     plot(X,T,'b',X,Y,'r')
     subplot(2,1,2)
-    plot(semilogy(convergence(1:iter)))
+    semilogy(convergence(1:iter))
     drawnow
 end
 close all
